@@ -1,0 +1,135 @@
+@media (max-width:800px){
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+        background-color: #fff;
+        /*background: url(images/Restaurant_kitchen.jpg);*/
+    }
+    *{
+        padding:0;
+        margin:0;
+        text-align:center;
+    } 
+    /*=====================================================================================
+    Container Area
+    =====================================================================================*/
+        .whole-container{
+            max-width:800px;           
+            display:grid;
+            grid-template-rows: 42px 1017px;
+        }
+ 
+    /*=====================================================================================
+    Header Area
+    =====================================================================================*/
+    .header{
+        grid-row:1/2;
+        display:grid;
+        grid-template-columns: repeat(2, 50%);
+        position:relative;
+        background-color: ivory;
+    }
+    .logosection{
+        grid-column:1/2;
+    }
+        .logo{
+                font-size:25px;
+                color:#99b7d4;           
+                position:absolute;
+                top:12px;
+                left:16px;
+                bottom:5px;
+            }
+    .logo:focus, .logo:hover{
+        color:#030305;
+    }
+    .header-nav-section {
+        display: none;
+    }
+    #hamnav{
+        grid-column:2/3;
+        background-color:green;
+    }
+    /*=====================================================================================
+    Hero Area
+    =====================================================================================*/
+    .hero-section{
+        grid-row:2/3;
+        display:grid;
+        grid-template-rows:233px 305px; 
+        position:relative;
+    }
+    .hero-image{
+        grid-row:1/2;
+        position:absolute;
+        background-color:lightgreen;
+    }
+    .hero-image img{
+        height:137px;
+        width:137px;
+        position:relative;
+        top:60px;
+        left:56px;
+    }
+    .hero-description{
+        grid-row:2/3;
+        color:#7a8faa;
+    }
+        .hero-text h1{
+            position:relative;
+            top:31px;
+            text-align:center;
+            margin-bottom:39px;
+            font-size:22px;
+            color:#030305;
+        }
+        span.logo{
+            color:#99b7d4;      
+            font-size:inherit;
+            position:initial;
+        }
+        .hero text p{
+            font-size:16px;
+        }
+   
+    .hero-button{
+        display:flex;
+        flex-flow: row wrap;
+        column-gap: 32px;
+        position:absolute;
+
+    }
+    .hero-button button{
+        width:133px;
+        height:42px;
+        font-size:21px;
+        font-weight:500;
+        color:#030305;
+        background-color:#fff;
+        border:1px solid #426325;
+        position:relative;
+        top:48px;
+    }
+    .hero-button a{
+        text-decoration:none;
+        color:inherit;
+    }
+    .hero-button button:first-of-type{
+        background-color: #99b7d4;
+    }
+    .hero-button button:first-of-type:hover, .hero-button button:first-of-type:focus{
+        background-color: #040304;
+    }
+    .hero-button button:hover, .hero-button button:focus{
+        color:#fff;
+        background-color:#99b7d4;
+        border:1px solid #426325;
+    }
+   
+    .accent{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: #99b7d4;
+    }
+    
+}
