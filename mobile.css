@@ -3,7 +3,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         box-sizing: border-box;
         background-color: #fff;
-        /*background: url(images/Restaurant_kitchen.jpg);*/
+        width:100vw;          
     }
     *{
         padding:0;
@@ -13,9 +13,9 @@
     /*=====================================================================================
     Container Area
     =====================================================================================*/
-        .whole-container{
-            max-width:800px;           
-            display:grid;
+        .whole-container{  
+            display:initial;
+            grid-template-columns:100vw;
             grid-template-rows: 42px 1017px;
         }
  
@@ -29,6 +29,63 @@
         position:relative;
         background-color: ivory;
     }
+    /*=====================================================================================
+        *HAMBURGER MENU    
+        =====================================================================================*/
+        #hamnav{
+                grid-column:2/3;
+            }
+            /* [ON BIG SCREEN] */
+        /* (A) WRAPPER */
+        #hamnav {
+            width: 100%;
+            background: inherit;
+        }
+  
+        /* (B) HORIZONTAL MENU ITEMS */
+        #hamitems { display: flex; }
+        #hamitems a {
+            flex-grow: 1;
+            flex-basis: 0;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+        #hamitems a:hover { background: #401408; }
+        
+        /* (C) HIDE HAMBURGER */
+        #hamnav label, #hamburger { display: none; }
+        /* [ON SMALL SCREENS] */
+        @media screen and (max-width: 800px){
+        /* (A) BREAK INTO VERTICAL MENU */
+        #hamitems a {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+        }
+        /* (B) SHOW HAMBURGER ICON */
+        #hamnav label { 
+        display: inline-block; 
+        color: white;
+        background: #99b7d4;
+        position:absolute;
+        right:20px;
+        top:9px;
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+        
+        }
+    
+        /* (C) TOGGLE SHOW/HIDE MENU */
+        #hamitems { display: none; }
+        #hamnav input:checked ~ #hamitems { display: block; }
+    }
+    /*=====================================================================================
+    LAYOUT    
+    =====================================================================================*/
     .logosection{
         grid-column:1/2;
     }
@@ -40,69 +97,88 @@
                 left:16px;
                 bottom:5px;
             }
+    /*
     .logo:focus, .logo:hover{
         color:#030305;
     }
+    */
     .header-nav-section {
         display: none;
     }
-    #hamnav{
-        grid-column:2/3;
-        background-color:green;
-    }
-    /*=====================================================================================
-    Hero Area
-    =====================================================================================*/
+        
+    
+    
     .hero-section{
         grid-row:2/3;
         display:grid;
         grid-template-rows:233px 305px; 
         position:relative;
     }
+    
     .hero-image{
         grid-row:1/2;
         position:absolute;
+        top:59px;
+        left:35%;
         background-color:lightgreen;
-    }
-    .hero-image img{
         height:137px;
         width:137px;
-        position:relative;
-        top:60px;
-        left:56px;
+        border-radius: 50%;
+
     }
+    .hero-image img{
+        height:inherit;
+        width:inherit;
+        position:relative;
+        border-radius: inherit;
+
+    }
+    
     .hero-description{
         grid-row:2/3;
+        width:98vw;
         color:#7a8faa;
+        position:absolute;
+        left:0;
+        
     }
+    
         .hero-text h1{
+            width:70vw;
+            margin-left:auto;
+            margin-right:auto;
             position:relative;
             top:31px;
-            text-align:center;
-            margin-bottom:39px;
-            font-size:22px;
-            color:#030305;
+            margin-bottom:69px;
         }
-        span.logo{
-            color:#99b7d4;      
-            font-size:inherit;
-            position:initial;
-        }
+            
+            span.logo{
+                color:#99b7d4;      
+                font-size:inherit;
+                position:initial;
+            }
         .hero text p{
+            position:relative;
+            top:42px;            
             font-size:16px;
         }
    
+    
     .hero-button{
         display:flex;
         flex-flow: row wrap;
         column-gap: 32px;
-        position:absolute;
+        position:relative;
+        top:48px;
+        left:22%;
 
     }
     .hero-button button{
         width:133px;
         height:42px;
-        font-size:21px;
+        font-size:17px;
+        justify-items: center;
+        align-items: center;
         font-weight:500;
         color:#030305;
         background-color:#fff;
@@ -131,5 +207,4 @@
         text-decoration-thickness: 2px;
         text-decoration-color: #99b7d4;
     }
-    
 }
